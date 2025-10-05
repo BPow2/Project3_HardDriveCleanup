@@ -1,0 +1,11 @@
+Help Text (help.txt)
+Usage: node bigstuff [arguments]
+-p, --path value, the relative or absolute path name of a file or directory. Default is -p .
+ -s, --sort alpha | exten | size
+alpha sorts alphabetically (ascending)
+exten sorts by extension alphabetically (ascending)
+size sorts by size (descending)
+Default is unsorted
+-m, --metric, sizes displayed as KB, MB, GB, and TB instead of bytes.
+-t, --threshold min, only displays files and folders of at least minimum size.
+-h, --help prints this usage screen. Ignores all other arguments.
