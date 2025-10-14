@@ -1,19 +1,21 @@
-import fs from "node:fs";
-import path from "path";
+//import fs = require('fs');
+import * as fs from 'fs';
+//import path = require('path');
+import * as path from 'path';
 import {filesize} from "filesize";
 
 const startingFolder = "C:\\Users\\bpow2\\Projects\\Coding\\testDir"
 
-function fileStats(file) {
+function fileStats(file: string) {
     const size = getFileSize(file);
     return filesize(size);
 }
 
-function getFileSize(file) {
+function getFileSize(file: string) {
     return fs.statSync(file).size;
 }
 
-function readFile(fileName) {
+function readFile(fileName: string) {
     try {
         return fs.readFileSync(fileName, "utf8");
     } catch (err) {
@@ -21,22 +23,12 @@ function readFile(fileName) {
     }
 }
 
-function getDirTotal(dir) {
-    let dirTotalSize = 0;
-    const files = fs.readdirSync(dir);
-    files.forEach(file => {
-        dirTotalSize += getFileSize(file)
-    })
-    console.log(dirTotalSize);
-}
-
-function readDirRecursive(dir, parentDir = './') {
+function readDirRecursive(dir: string, parentDir = './') {
     try {
         const files = fs.readdirSync(dir);
-        files.forEach(file => {
+        files.forEach((file:string) => {
             const filePath = path.join(dir, file);
             const stat = fs.statSync(filePath);
-            let currentDir = "./"
             if (stat.isDirectory()) {
                 dirArr.push(
                     {
@@ -67,6 +59,6 @@ if (process.argv.includes("-h") || process.argv.includes("--help")) {
     console.log(readFile("./help.txt"));
 }
 
-let dirArr = []
+let dirArr: Array<object> = []
 readDirRecursive(startingFolder);
 console.log(dirArr)

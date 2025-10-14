@@ -1,6 +1,17 @@
 {
-  "dependencies": {
-    "filesize": "^11.0.13"
+  "name": "cleanup-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cleanup.js"
   },
-  "type" : "module"
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.2.0"
+  },
+    "dependencies": {
+    "filesize": "^11.0.13"
+  }
 }
+
