@@ -6,16 +6,16 @@ import {filesize} from "filesize";
 
 const startingFolder = "C:\\Users\\bpow2\\Projects\\Coding\\testDir"
 
-function fileStats(file: string) {
-    const size = getFileSize(file);
+function fileStats(file: string): string {
+    const size: number = getFileSize(file);
     return filesize(size);
 }
 
-function getFileSize(file: string) {
+function getFileSize(file: string): number {
     return fs.statSync(file).size;
 }
 
-function readFile(fileName: string) {
+function readFile(fileName: string): any {
     try {
         return fs.readFileSync(fileName, "utf8");
     } catch (err) {
@@ -23,12 +23,12 @@ function readFile(fileName: string) {
     }
 }
 
-function readDirRecursive(dir: string, parentDir = './') {
+function readDirRecursive(dir: string, parentDir = './'): void {
     try {
-        const files = fs.readdirSync(dir);
+        const files: string[]  = fs.readdirSync(dir);
         files.forEach((file:string) => {
-            const filePath = path.join(dir, file);
-            const stat = fs.statSync(filePath);
+            const filePath: string = path.join(dir, file);
+            const stat: any = fs.statSync(filePath);
             if (stat.isDirectory()) {
                 dirArr.push(
                     {

@@ -1,0 +1,22 @@
+# 🧹 Hard Drive Cleanup (Directory Size Analyzer)
+
+A simple **command-line Node.js application** written in **TypeScript** that recursively scans a starting directory and reports the sizes of all files and directories.  
+Useful for analyzing how disk space is being used in a folder tree.
+
+---
+
+## 📦 Features
+
+- Recursively scans directories starting from a given folder  
+- Displays file paths, types (file/directory), and human-readable sizes  
+- Outputs a JSON-style array of all directories and files  
+- Includes a help flag (`-h` or `--help`) to display usage information  
+- Written in **TypeScript** and runs on **Node.js**
+
+---
+
+## 🧰 Requirements
+
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [TypeScript](https://www.typescriptlang.org/)
+- NPM package: [`filesize`](https://www.npmjs.com/package/filesize)

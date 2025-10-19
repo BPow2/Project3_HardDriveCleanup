@@ -1,8 +1,7 @@
 {
   "name": "cleanup-project",
   "version": "1.0.0",
-  "type": "module",
-  "scripts": {
+   "scripts": {
     "build": "tsc",
     "start": "node dist/cleanup.js"
   },
